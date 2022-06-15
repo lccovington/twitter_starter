@@ -3,7 +3,6 @@ import TweetInput from "./TweetInput"
 import "./TweetBox.css"
 
 export default function TweetBox(props) {
-  console.log(props)
 
   function handleOnTweetTextChange(e) {
     props['setTweetText'](e.target.value);
@@ -13,14 +12,14 @@ export default function TweetBox(props) {
     let newTweet = {
       name: props['userProfile'].name,
       handle: props['userProfile'].handle,
-      text: '',
+      text: props['tweetText'],
       comment: 0,
       retweets: 0,
       likes: 0,
       id: props['tweets'].length
     }
 
-    props['setTweets'](props['tweets'].concat([newTweet]))
+    return props['setTweets'](props['tweets'].concat([newTweet]))
   }
 
   return (
