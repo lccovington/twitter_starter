@@ -19,7 +19,7 @@ export default function TweetBox(props) {
       id: props['tweets'].length
     }
 
-    return props['setTweets'](props['tweets'].concat([newTweet]))
+    props['setTweets'](props['tweets'].concat([newTweet]))
   }
 
   return (
@@ -47,7 +47,6 @@ export function TweetBoxIcons() {
 }
 
 export function TweetCharacterCount(props) {
-  // ADD CODE HERE
   return <span></span>
 }
 

@@ -4,9 +4,10 @@ import TweetBox from "../TweetBox/TweetBox"
 import "./Feed.css"
 
 export default function Feed(props) {
+
   return (
     <div className="col feed">
-      {/* UPDATE TWEET BOX PROPS HERE */}
+      
       <TweetBox tweets={props.tweets} tweetText={props.tweetText} setTweets={props.setTweets} setTweetText={props.setTweetText} userProfile={props.userProfile}/>
 
       <div className="see-new-tweets beet">
