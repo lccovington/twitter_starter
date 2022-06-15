@@ -48,8 +48,16 @@ export function TweetBoxIcons() {
 }
 
 export function TweetCharacterCount(props) {
-  console.log(props.tweetText)
-  return <span>{139 - props.tweetText.length}</span>
+  let difference = 140 - props.tweetText.length
+
+  if (props.tweetText == "") {
+    return <span></span>
+  } else if (difference < 0) {
+    return <span className="red">{difference}</span>
+  } else {
+    return <span>{difference}</span>
+
+  }
 }
 
 export function TweetSubmitButton(props) {
