@@ -11,7 +11,6 @@ export default function App() {
 
   const [userProfile, setUserProfile] = React.useState(codepathUserProfile)
   const [tweets, setTweets] = React.useState([firstTweet])
-  console.log(tweets[0])
 
   return (
     <div className="app">
