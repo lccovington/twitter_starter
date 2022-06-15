@@ -12,7 +12,7 @@ export default function App() {
   const [userProfile, setUserProfile] = React.useState(codepathUserProfile)
   const [tweets, setTweets] = React.useState([firstTweet])
   const [tweetText, setTweetText] = React.useState('')
-  console.log(Array.isArray(tweets));
+
   return (
     <div className="app">
       <Navbar navLinks={navLinks}/>

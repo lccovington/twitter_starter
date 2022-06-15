@@ -4,7 +4,7 @@ import { formatLikes } from "../../utils/format"
 import "./Tweet.css"
 
 export default function Tweet({ tweet }) {
-  console.log(tweet)
+  
   return (
     <div className="tweet" data-tweet-id={tweet.id}>
       <div className="tweet-avatar">
