@@ -20,6 +20,7 @@ export default function TweetBox(props) {
     }
 
     props['setTweets'](props['tweets'].concat([newTweet]))
+    props['setTweetText']("")
   }
 
   return (
