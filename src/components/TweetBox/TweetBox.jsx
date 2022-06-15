@@ -52,7 +52,7 @@ export function TweetCharacterCount(props) {
   return <span></span>
 }
 
-export function TweetSubmitButton() {
+export function TweetSubmitButton({handleOnSubmit}) {
   return (
     <div className="tweet-submit">
       <i className="fas fa-plus-circle"></i>
