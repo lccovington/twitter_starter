@@ -23,6 +23,12 @@ export default function TweetBox(props) {
     props['setTweetText']("")
   }
 
+  let disableFlag = false
+
+  if (props.tweetText == "" || props.tweetText == undefined || props.tweetText.length > 140) {
+    disableFlag = true
+  }
+
   return (
     <div className="tweet-box">
       <TweetInput value={props['tweetText']} handleOnChange={handleOnTweetTextChange}/>
@@ -30,7 +36,7 @@ export default function TweetBox(props) {
       <div className="tweet-box-footer">
         <TweetBoxIcons />
         <TweetCharacterCount tweetText={props['tweetText']} />
-        <TweetSubmitButton tweetText={props['tweetText']} handleOnSubmit={handleOnTweetSubmit}/>
+        <TweetSubmitButton disableFlag={disableFlag} handleOnSubmit={handleOnTweetSubmit}/>
       </div>
     </div>
   )
@@ -53,25 +59,20 @@ export function TweetCharacterCount(props) {
   if (props.tweetText == "") {
     return <span></span>
   } else if (difference < 0) {
-    return <span className="red">{difference}</span>
+    return <span className="tweet-length red">{difference}</span>
   } else {
-    return <span>{difference}</span>
+    return <span className="tweet-length">{difference}</span>
 
   }
 }
 
 export function TweetSubmitButton(props) {
 
-  let disableFlag = false
-
-  if (props.tweetText == "" || props.tweetText == undefined || props.tweetText.length > 140) {
-    disableFlag = true
-  }
-
   return (
     <div className="tweet-submit">
       <i className="fas fa-plus-circle"></i>
-      <button className="tweet-submit-button" disabled={disableFlag} onClick={props.handleOnSubmit}>Tweet</button>
+      <button className="tweet-submit-button" onClick={props.handleOnSubmit} disabled={props.disableFlag}>Tweet</button>
     </div>
+    
   )
 }
